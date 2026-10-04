@@ -1,0 +1,80 @@
+# Projeto Flask — Sistema de Cadastro de Usuários (Em Desenvolvimento)
+
+* **O que é:** Aplicação web modular desenvolvida em Flask estruturada para gerenciamento e cadastro de usuários, servindo como base acadêmica/prática para arquitetura full-stack.
+* **Linguagens e Tecnologias Utilizadas:** Python, HTML5, CSS3, Flask.
+
+---
+
+## 1. Visão Geral da Arquitetura
+
+O projeto segue uma estrutura modular padrão para aplicações Flask, separando a inicialização da aplicação, as rotas (views), os arquivos estáticos e os templates HTML.
+
+* **`main.py`**: Ponto de entrada da aplicação.
+
+
+* **`app/`**: Pacote principal contendo a lógica do sistema.
+
+
+* `__init__.py`: Inicializa a instância do Flask.
+
+
+* `views.py`: Define os *endpoints* (rotas) e controla o fluxo de renderização.
+
+
+* `static/`: Contém os arquivos estáticos (`css/`, `img/`).
+
+
+* `templates/`: Contém as interfaces HTML dinâmicas.
+
+
+
+
+
+---
+
+## 2. Detalhamento dos Componentes
+
+### Ponto de Entrada (`main.py`)
+
+* Importa a instância `app` do pacote `app`.
+
+
+* Executa o servidor de desenvolvimento com o modo `debug=True` ativado, permitindo *reloading* automático em tempo de execução.
+
+
+
+### Inicialização do Aplicativo (`app/__init__.py`)
+
+* Instancia o objeto principal do framework (`app = Flask(__name__)`).
+
+
+* Importa o módulo `views` ao final do arquivo para registrar as rotas, evitando problemas de importação circular típicos do Flask.
+
+
+
+### Gerenciamento de Rotas (`app/views.py`)
+
+* **`homepage()` (`@app.route('/')`)**: Mapeia a raiz da aplicação para o template `index.html`.
+
+
+* **`usuarios()` (`@app.route('/usuarios')`)**: Mapeia o endpoint `/usuarios` para o template `segunda_pagina.html`.
+
+
+
+### Camada de Apresentação (Templates HTML)
+
+* **`index.html`**: Página principal contendo um formulário de cadastro com o método `POST` direcionado para `/enviar-dados`, além de um link estruturado via `url_for('usuarios')` para navegação interna.
+
+
+* **`segunda_pagina.html`**: Página de listagem de usuários com elementos estruturais para exibição de dados e links dinâmicos de retorno à página principal (`url_for('homepage')`).
+
+
+
+---
+
+## 3. Status de Desenvolvimento & Próximos Passos
+
+* **Status Atual:** Em construção (protótipo de rotas e interfaces visuais configurado).
+* **Próximos Passos:**
+* Implementação da lógica de recebimento de dados no backend (método POST na rota correspondente).
+* Integração com banco de dados relacional para persistência de usuários.
