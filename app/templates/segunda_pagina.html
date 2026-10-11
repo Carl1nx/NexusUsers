@@ -8,20 +8,19 @@
 </head>
 <body>
 
-  <h1 class="titulo">USUÁRIOS CADASTRADOS</h1>
+  <h1 class="titulo">Cadastro de Usuários</h1>
+  <form method="POST" action="{{ url_for('usuarios') }}">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
 
-  <main class="card">
-    <section class="container-usuarios">
-      <div class="item-usuario">
-        <span class="nome-usuario"></span>
-        <span class="email-usuario"></span>
-      </div>
-    </section>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="telefone">Telefone:</label>
+    <input type="text" id="telefone" name="telefone" required><br><br>
+
   
 
-    
-  </main>
-  <button class="btn-link" id="btnEditar">Editar Usuários</button>
 
 <a href="{{ url_for('homepage') }}" class="btn-link">Voltar para a Página Principal</a>
 </body>

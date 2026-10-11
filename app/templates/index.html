@@ -9,23 +9,16 @@
 <body
 
  
-<h1 class="titulos">CADASTRO DE USUARIOS </h1>
+<h1 class="titulos"> NexusUsers</h1>
+
+<header class="HeaderNexus">
+  <nav>
+    <a href="{{ url_for('usuarios') }}">Cadastro de Usuários</a>
+    <a href="{{ url_for('editar') }}">Editar Usuário</a>
+  </nav>
+</header>
 
 
-
-<form>
-    <form action="/enviar-dados" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-      
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-      
-        <button type="submit">Enviar</button>
-      </form>   
-</form>
- 
-<a href="{{url_for('usuarios')}}" class="btn-link">Ir para Cadastro de Usuarios</a>
 
 </body>
 </html>

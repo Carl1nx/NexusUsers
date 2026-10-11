@@ -9,4 +9,8 @@ def homepage():
 def usuarios():
     return render_template('segunda_pagina.html')
 
+@app.route('/editar')
+def editar():
+    return render_template('editar.html')
+
 
