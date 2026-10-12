@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
-    <link rel="stylesheet" href="../static/css/stylepag.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepag.css') }}">
 </head>
 <body>
-    <h1 class="titulos">Editar Usuário</h1>
-<div class="container-grid">
-    <button class="botao">Editar</button>
-    <button class="botao">Excluir</button>
-    <button class="botao">Salvar Alterações</button>
-</div>
-<a href="{{ url_for('homepage') }}" class="btn-link">Voltar para a Página Principal</a>
+    <h1 class="titulos">Gerenciar Usuários</h1>
+
+    <div class="container-flex">
+        {% for u in usuarios %}
+            <div class="usuario-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
+                <span><strong>{{ u.nome }}</strong> - {{ u.email }} - {{ u.telefone }}</span>
+                
+                <!-- Apenas o botão de Editar -->
+                <a href="{{ url_for('editar_usuario', id=u.id) }}" class="botao" style="text-decoration: none; display: inline-block; text-align: center;">Editar</a>
+            </div>
+        {% else %}
+            <p>Nenhum usuário cadastrado ainda.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('homepage') }}" class="btn-link">Voltar para a Página Principal</a>
 </body>
 </html>
