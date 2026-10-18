@@ -25,10 +25,17 @@ Alinhamento de Botoes: Layout flexivel ou em grid para multiplos botoes alinhado
 Rotas e Endpoints
 
 @app.route('/'): Mapeia a raiz para o template principal contendo formulario com envio via metodo POST e navegacao interna.
-@app.route('/usuarios'): Mapeia o endpoint de gerenciamento para listagem e retorno dinamico a pagina inicial.
-Rota de Edicao: Adicionada para controlar o fluxo e o tratamento de dados de usuarios na nova interface de edicao.
+@app.route('/usuarios'): Usada para registrar novos usuarios 
+@app.route('/editar'): Mostra a lista de usuarios e abre opçao para qual usuario quer editar
+@app.route('/editar_usuario/<int:ID>'): Pega o ID do usuario escolhido e edita as suas informaçoes e envia elas para o banco de dados
 
-Proximos Passos
+Banco de Dados e Integraçao
 
-Implementar a logica de recepcao de dados via metodo POST no backend
-Integrar com banco de dados relacional para persistencia de registros de usuarios
+Banco de Dados: SQLALCHEMY usado para determinar tabelas
+sqlite3 usado com SQL
+Uma tabela usurios com 4 colunas:
+    ID primary key
+    nome
+    email
+    telefone
+

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
- background: linear-gradient(90deg, #334b5a 0%, #6385eb 50%, #00ffcc 100%);
+ background-color: #f2f3f7;
   color: #f2f3f7;
 }
 
@@ -31,5 +31,5 @@ body {
 }
 
 .HeaderNexus nav a:hover {
-  color: #f4f4f5;
+  color: #909091;
 }
