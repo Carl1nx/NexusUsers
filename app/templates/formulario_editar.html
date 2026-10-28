@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepag.css') }}">
+</head>
+<body>
+    <h1>Editar Utilizador: {{ usuario.nome }}</h1>
+
+    <form class="list"method="POST">
+        <label class="editar">Nome:</label>
+        <input class="text"type="text" name="nome" value="{{ usuario.nome }}" required><br><br>
+
+        <label class="editar">E-mail:</label>
+        <input class="text"type="email" name="email" value="{{ usuario.email }}" required><br><br>
+
+        <label class="editar">Telefone:</label>
+        <input class="text" type="text" name="telefone" value="{{ usuario.telefone }}" required><br><br>
+
+        <button class="botao"type="submit">Salvar Alterações</button>
+        <a class="botao" href="{{ url_for('editar') }}">Cancelar</a>
+    </form>
+
+    
+    
+</body>
+</html>

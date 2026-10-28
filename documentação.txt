@@ -1,0 +1,41 @@
+Sistema de Cadastro de Usuarios (Flask)
+
+Arquitetura
+
+main.py: Ponto de entrada da aplicacao rodando com modo debug ativado
+app/: Pacote principal contendo os modulos do sistema
+init.py: Inicializacao da instancia do Flask e carregamento estruturado das rotas
+views.py: Gerenciador de rotas e fluxo de renderizacao
+
+
+static/: Armazenamento de arquivos estaticos (folhas de estilo atualizadas com paleta dark clean, gradientes lineares horizontais de 90° e estilizacao refinada)
+templates/: Interfaces HTML dinamicas contendo:
+index.html: Pagina principal com formulario de cadastro
+segunda_pagina.html: Pagina de listagem de usuarios
+editar.html: Pagina dedicada ao gerenciamento, contendo as interfaces para editar, excluir e salvar alteracoes de usuarios
+
+
+
+Componentes de Interface e Estilizacao
+
+Estetica Visual (Dark Mode Clean): Fundo em tons de grafite escuro com transicoes suaves (linear-gradient(90deg)) e contrastes suaves para leitura confortavel.
+Componente .HeaderNexus: Estruturado com CSS Grid (grid-template-columns), alinhamento centralizado, margens automaticas e espacamento refinado (gap) entre os elementos de navegacao e logo.
+Alinhamento de Botoes: Layout flexivel ou em grid para multiplos botoes alinhados em linha com espacamentos consistentes.
+
+Rotas e Endpoints
+
+@app.route('/'): Mapeia a raiz para o template principal contendo formulario com envio via metodo POST e navegacao interna.
+@app.route('/usuarios'): Usada para registrar novos usuarios 
+@app.route('/editar'): Mostra a lista de usuarios e abre opçao para qual usuario quer editar
+@app.route('/editar_usuario/<int:ID>'): Pega o ID do usuario escolhido e edita as suas informaçoes e envia elas para o banco de dados
+
+Banco de Dados e Integraçao
+
+Banco de Dados: SQLALCHEMY usado para determinar tabelas
+sqlite3 usado com SQL
+Uma tabela usurios com 4 colunas:
+    ID primary key
+    nome
+    email
+    telefone
+

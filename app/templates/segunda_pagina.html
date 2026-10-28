@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Usuários</title>
+  <link rel="stylesheet" href="../static/css/stylepag.css">
+</head>
+<body>
+
+  <h1 class="titulo">Cadastro de Usuários</h1>
+
+  <form class="list"method="POST" action="{{ url_for('usuarios') }}">
+    <label class="editar"for="nome">Nome:</label>
+    <input class="text"type="text" id="nome" name="nomeForm" required><br><br>
+
+    <label class="editar"for="email">Email:</label>
+    <input class="text" type="email" id="email" name="emailForm" required><br><br>
+
+    <label class="editar" for="telefone">Telefone:</label>
+    <input class="text" type="text" id="telefone" name="telefoneForm" required><br><br>
+
+  
+<button class="botao">Cadastrar</button>
+<a class="botao" href="{{ url_for('homepage') }}">Voltar para a Página Principal</a>
+  </form>
+
+</body>
+</html>
