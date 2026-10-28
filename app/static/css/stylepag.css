@@ -59,14 +59,50 @@ body {
 .botao {
   padding: 10px 20px;
   background-color: #242528;
-  color: #c5c5d0;
+  color: #ffffff;
   border: 1px solid #323338;
   border-radius: 6px;
   cursor: pointer;
-  font-family: inherit;
+  font-family: 'Nunito', sans-serif;;
   transition: background-color 0.2s ease;
 }
 
 .botao:hover {
   background-color: #323338;
+}
+
+.list {
+  background-color: #0a0a0a;
+  font-family: 'Nunito', sans-serif;;
+  font-size: 15px;
+  text-decoration-color: #ffffff;
+  font: bold;
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.tel {
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;;
+  color:#fffcfc;
+}
+
+.editar {
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;;
+  border-radius: 1px;
+  color:#ffffff;
+  font: bold;
+}
+
+.text {
+  padding: 10px 15px;
+  background-color: #242528;
+  color: #ffffff;
+  border: 1px solid #323338;
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;;
+  transition: background-color 0.2s ease;
+  text-align: center;
+  justify-content: center;
 }

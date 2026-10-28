@@ -9,20 +9,21 @@
 <body>
 
   <h1 class="titulo">Cadastro de Usuários</h1>
-  <form method="POST" action="{{ url_for('usuarios') }}">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nomeForm" required><br><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="emailForm" required><br><br>
+  <form class="list"method="POST" action="{{ url_for('usuarios') }}">
+    <label class="editar"for="nome">Nome:</label>
+    <input class="text"type="text" id="nome" name="nomeForm" required><br><br>
 
-    <label for="telefone">Telefone:</label>
-    <input type="text" id="telefone" name="telefoneForm" required><br><br>
+    <label class="editar"for="email">Email:</label>
+    <input class="text" type="email" id="email" name="emailForm" required><br><br>
+
+    <label class="editar" for="telefone">Telefone:</label>
+    <input class="text" type="text" id="telefone" name="telefoneForm" required><br><br>
 
   
-<button class="btn-link">Cadastrar</button>
+<button class="botao">Cadastrar</button>
+<a class="botao" href="{{ url_for('homepage') }}">Voltar para a Página Principal</a>
   </form>
 
-<a href="{{ url_for('homepage') }}" class="btn-link">Voltar para a Página Principal</a>
 </body>
 </html>

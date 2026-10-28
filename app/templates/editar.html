@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepag.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylepag">
 </head>
 <body>
     <h1 class="titulos">Gerenciar Usuários</h1>
@@ -12,16 +13,16 @@
     <div class="container-flex">
         {% for u in usuarios %}
             <div class="usuario-item" style="margin-bottom: 15px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">
-                <span><strong>{{ u.nome }}</strong> - {{ u.email }} - {{ u.telefone }}</span>
+                <span class="list"><strong class="list">{{ u.nome }}</strong> | {{ u.email }} | <strong class="tel">{{ u.telefone }}</strong></span>
                 
-                <!-- Apenas o botão de Editar -->
-                <a href="{{ url_for('editar_usuario', id=u.id) }}" class="botao" style="text-decoration: none; display: inline-block; text-align: center;">Editar</a>
+               
+                <a class="botao"href="{{ url_for('editar_usuario', id=u.id) }}"  style="text-decoration: none; display: inline-block; text-align: center;">Editar</a>
             </div>
         {% else %}
             <p>Nenhum usuário cadastrado ainda.</p>
         {% endfor %}
     </div>
 
-    <a href="{{ url_for('homepage') }}" class="btn-link">Voltar para a Página Principal</a>
+    <a href="{{ url_for('homepage') }}" class="botao">Voltar para a Página Principal</a>
 </body>
 </html>
